@@ -15,4 +15,4 @@ This project presents chemistry knowledge about Vitamin C through a user-friendl
 
 ### How to View Locally
 
-Open `web/index.html` in a browser.
+Open `docs/index.html` in a browser.

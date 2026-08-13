@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- 2023年6月25日 -->
+<!-- ©2023 all rights reserved by Fredyang -->
+<!-- 感谢厚朴工作室师兄师姐提供的教程 -->
+<!-- 感谢瞿俊雄老师的课堂指导 -->
+<html lang="en">
+<head>
+    <!-- 设置文件MIME类型，字符所使用的字符集 -->
+    <meta charset="UTF-8">
+    <!-- IE下打开时，默认使用EDGE模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>All about Vitamin C-网页地图</title>
+    <!-- 用于浏览器网页标签的logo 可以通过修改 href 属性的内容来修改网页标签的logo-->
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- 引入CSS样式 -->
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="./animate.css">
+    <!-- 视口元标记 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- 导航条部分 -->
+    <nav id="navbar2">
+      <a href="./index.html" class="logo"><img src="./images/logo.png" /></a>
+      <div class="links menu nav-menu" id="nav">
+        <div class="menu-item">
+          <a class="menu-a" data-toggle="sub-menu" href="./index.html">首页</a>
+        </div>
+        <div class="menu-item menu-item-has-children">
+          <a class="menu-a" data-toggle="sub-menu" href="./features/column.html">生理功能 <i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="./features/content_whiteskin.html">皮肤美白</a></li>
+            <li class="menu-item"><a href="#">抗氧化</a></li>
+            <li class="menu-item"><a href="#">促进胶原蛋白合成</a></li>
+          </ul>
+        </div>
+        <div class="menu-item menu-item-has-children">
+          <a class="menu-a" data-toggle="sub-menu" href="./property/column.html">理化性质 <i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="./property/content-physics.html">抗坏血酸的物理性质</a></li>
+            <li class="menu-item"><a href="#">抗坏血酸的化学性质</a></li>
+          </ul>
+        </div>
+        <div class="menu-item menu-item-has-children">
+          <a class="menu-a" data-toggle="sub-menu" href="./analysis/column.html">实验检测 <i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="./analysis/content_az.html">青椒中的抗坏血酸含量</a></li>
+            <li class="menu-item"><a href="./analysis/content_ykq.html">红辣椒中的抗坏血酸含量</a></li>
+            <li class="menu-item"><a href="./analysis/content_ljs.html">椰子中的抗坏血酸含量</a></li>
+            <li class="menu-item"><a href="./analysis/content_mk.html">奇异果中的抗坏血酸含量</a></li>
+            <li class="menu-item"><a href="./analysis/content_syx.html">西瓜中的抗坏血酸含量</a></li>
+            <li class="menu-item"><a href="./analysis/content_zqq.html">橙子中的抗坏血酸含量</a></li>
+          </ul>
+        </div>
+        <div class="menu-item menu-item-has-children">
+          <a class="menu-a" data-toggle="sub-menu" href="#">水果中的维C <i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="#">苹果维C数据报表</a></li>
+            <li class="menu-item"><a href="#">橘子维C数据报表</a></li>
+            <li class="menu-item"><a href="#">葡萄维C数据报表</a></li>
+            <li class="menu-item"><a href="#">柠檬维C数据报表</a></li>
+          </ul>
+        </div>
+        <div class="menu-item menu-item-has-children">
+          <a class="menu-a" data-toggle="sub-menu" href="#">蔬菜中的维C <i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="#">辣椒维C数据报表</a></li>
+            <li class="menu-item"><a href="#">茄子维C数据报表</a></li>
+            <li class="menu-item"><a href="#">白菜维C数据报表</a></li>
+            <li class="menu-item"><a href="#">番茄维C数据报表</a></li>
+          </ul>
+        </div>
+        <div class="menu-item menu-item-has-children">
+          <a class="menu-a" data-toggle="sub-menu" href="#">有关标准 <i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="#">维生素C药片含量规定</a></li>
+            <li class="menu-item"><a href="#">人体每日摄入含量建议</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
+      <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
+    </nav>
+
+    <!-- 文章头图 -->
+    <header>
+        <img src="./images/map-head.jpg" width="100%">
+    </header>
+
+
+    <!-- 面包屑导航 -->
+    <div class="hope_container" id="hope_container" >
+        <i class="location_icon"></i>
+        <img src="./images/icons/mianbaoxie.png" width="20px">
+        <span>您所在的位置：</span>
+        <!--通过改变a标签、span标签的数量和内容来改变网站的位置-->
+        <a href="./index.html">All about Vitamin C</a>
+        <span>&gt;&gt; </span>
+        <a href="./map.html">网页地图</a>
+        <hr>
+    </div>
+
+    <!-- 网页地图导航 -->
+    <section>
+        <map>
+            <div class="map-col">
+              <a href="./index.html">
+                <h3>首页</h3>
+                <li>All about Vitamin C</li>
+              </a>
+            </div>
+            <div class="map-col">
+              <a href="aboutME.html">
+                <h3>关于作者</h3>
+                <li>基本信息</li>
+                <li>兴趣爱好</li>
+                <li>我的一些tags</li>
+              </a>
+            </div>
+            <div class="map-col">
+                <a href="./features/column.html"><h3>生理功能</h3></a>
+                <a href="./features/content_whiteskin.html"><li>皮肤美白</li></a>
+                <a href="#"><li>抗氧化</li></a>
+                <a href="#"><li>促进胶原蛋白合成</li></a>
+            </div>
+            <div class="map-col">
+                <a href="./property/column.html"><h3>理化性质</h3></a>
+                <a href="./property/content-physics.html"><li>抗坏血酸的物理性质</li></a>
+                <a href="#"><li>抗坏血酸的化学性质</li></a>
+            </div>
+        </map> 
+
+        <map>
+            <div class="map-col">
+                <a href="./analysis/column.html"><h3>实验检测</h3></a>
+                <a href="./analysis/content_az.html"><li>青椒中的抗坏血酸含量</li></a>
+                <a href="./analysis/content_ykq.html"><li>红辣椒中的抗坏血酸含量</li></a>
+                <a href="./analysis/content_ljs.html"><li>椰子中的抗坏血酸含量</li></a>
+                <a href="./analysis/content_mk.html"><li>奇异果中的抗坏血酸含量</li></a>
+                <a href="./analysis/content_syx.html"><li>西瓜中的抗坏血酸含量</li></a>
+                <a href="./analysis/content_zqq.html"><li>橙子中的抗坏血酸含量</li></a>
+            </div>
+            <div class="map-col">
+                <a href="#"><h3>水果中的维C</h3></a>
+                <a href="#"><li>苹果维C数据报表</li></a>
+                <a href="#"><li>橘子维C数据报表</li></a>
+                <a href="#"><li>葡萄维C数据报表</li></a>
+                <a href="#"><li>柠檬维C数据报表</li></a>
+                <a href="#"><li>...</li></a>
+            </div>
+            <div class="map-col">
+                <a href="#"><h3>蔬菜中的维C</h3></a>
+                <a href="#"><li>辣椒维C数据报表</li></a>
+                <a href="#"><li>茄子维C数据报表</li></a>
+                <a href="#"><li>白菜维C数据报表</li></a>
+                <a href="#"><li>番茄维C数据报表</li></a>
+                <a href="#"><li>...</li></a>
+            </div>
+            <div class="map-col">
+                <a href="#"><h3>有关标准</h3></a>
+                <a href="#"><li>维生素C药片含量规定</li></a>
+                <a href="#"><li>人体每日摄入含量建议</li></a>
+                <a href="#"><li>...</li></a>
+            </div>
+        </map>
+    </section>
+
+    
+  <!-- Footer部分开始 -->
+  <div class="footer">
+    <div class="container animate__animated animate__fadeIn wow">
+      <div class="footer-box">
+        <h3>关于作者</h3>
+        <p>杨康祺(Fred Yang)<br />中山大学2021级化学学院本科生<br /></p>
+        <p>
+          Copyrights &copy; 2023 All rights reserved By
+          <a href="./aboutME.html"><br />Fred Yang</a>
+        </p>
+      </div>
+      <div class="footer-box">
+        <h3>网站导航</h3>
+        <p>点击指针可查看网站地图</p>
+        <p>
+          <a href="./map.html"><img class="map" src="./images/icons/icon_nav.png" /></a>
+        </p>
+      </div>
+      <div class="footer-box">
+        <h3>联系作者</h3>
+        <p>鼠标停至图标上可获许联系方式</p>
+        <div>
+          <a href="#" class="footer-icon-link icon_wechat">
+            <span class="footer_toolbar toolbar_wechat toolbar_main_move"></span>
+          </a>
+          <a href="#" class="footer-icon-link icon_bilibili">
+            <span class="footer_toolbar toolbar_bilibili toolbar_main_move"></span>
+          </a>
+          <a href="#" class="footer-icon-link icon_email">
+            <span class="footer_toolbar toolbar_email toolbar_main_move"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer部分结束 -->
+    
+    <!-- 调用wow -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+</html>
