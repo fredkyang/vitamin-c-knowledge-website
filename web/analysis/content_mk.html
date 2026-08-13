@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- 2023年6月25日 -->
+<!-- ©2023 all rights reserved by Fredyang -->
+<!-- 感谢厚朴工作室师兄师姐提供的教程 -->
+<!-- 感谢瞿俊雄老师的课堂指导 -->
+<html lang="en">
+<head>
+    <!-- 设置文件MIME类型，字符所使用的字符集 -->
+    <meta charset="UTF-8">
+    <!-- IE下打开时，默认使用EDGE模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>All about Vitamin C-实验检测-奇异果</title>
+    <!-- 用于浏览器网页标签的logo 可以通过修改 href 属性的内容来修改网页标签的logo-->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- 引入CSS样式 -->
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../animate.css">
+    <!-- 视口元标记 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- 导航条部分 -->
+    <nav id="navbar2">
+        <a href="../index.html" class="logo"><img src="../images/logo.png" /></a>
+        <div class="links menu nav-menu" id="nav">
+          <div class="menu-item">
+            <a class="menu-a" data-toggle="sub-menu" href="../index.html">首页</a>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="../features/column.html">生理功能 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="../features/content_whiteskin.html">皮肤美白</a></li>
+              <li class="menu-item"><a href="#">抗氧化</a></li>
+              <li class="menu-item"><a href="#">促进胶原蛋白合成</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="../property/column.html">理化性质 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="../property/content-physics.html">抗坏血酸的物理性质</a></li>
+              <li class="menu-item"><a href="#">抗坏血酸的化学性质</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="../analysis/column.html">实验检测 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="../analysis/content_az.html">青椒中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_ykq.html">红辣椒中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_ljs.html">椰子中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_mk.html">奇异果中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_syx.html">西瓜中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_zqq.html">橙子中的抗坏血酸含量</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="#">水果中的维C <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="#">苹果维C数据报表</a></li>
+              <li class="menu-item"><a href="#">橘子维C数据报表</a></li>
+              <li class="menu-item"><a href="#">葡萄维C数据报表</a></li>
+              <li class="menu-item"><a href="#">柠檬维C数据报表</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="#">蔬菜中的维C <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="#">辣椒维C数据报表</a></li>
+              <li class="menu-item"><a href="#">茄子维C数据报表</a></li>
+              <li class="menu-item"><a href="#">白菜维C数据报表</a></li>
+              <li class="menu-item"><a href="#">番茄维C数据报表</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="#">有关标准 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="#">维生素C药片含量规定</a></li>
+              <li class="menu-item"><a href="#">人体每日摄入含量建议</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
+        <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
+    </nav>
+
+    <!-- 文章头图 -->
+    <header>
+        <img src="../images/article/archead_mk.jpg" width="100%">
+    </header>
+
+    <script src="../js/script.js"></script>
+
+    <!-- 面包屑导航 -->
+    <div class="hope_container" id="hope_container" >
+        <i class="location_icon"></i>
+        <img src="../images/icons/mianbaoxie.png" width="20px">
+        <span>您所在的位置：</span>
+        <!--通过改变a标签、span标签的数量和内容来改变网站的位置-->
+        <a href="../index.html">All about Vitamin C</a>
+        <span>&gt;&gt; </span>
+        <a href="../analysis/column.html">实验检测</a>
+        <span>&gt;&gt; </span>
+        <a href="../analysis/content_mk.html">奇异果中的抗坏血酸含量</a>
+        <hr>
+    </div>
+
+    <!-- 文章主要内容 -->
+    <section class="article" id="article">
+        <h2 class="animate__animated animate__fadeInUp wow">标题：微波辅助提取-高效液相色谱法测定奇异果中的抗坏血酸含量</h2>
+        
+        <hr>
+
+        <h3 class="animate__animated animate__fadeInUp wow">论文作者</h3>
+        <div class="author">
+            <img src="../images/article/headshot_mk.jpeg" class="animate__animated animate__fadeInLeft wow">
+            <div class="author-det">
+                <h5 class="animate__animated animate__fadeInLeft wow">莫凯</h5>
+                <p class="animate__animated animate__fadeInLeft wow">2021级化学类1班</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="content">
+            <h3 class="animate__animated animate__fadeInUp wow">摘要</h3>
+            <p class="animate__animated animate__fadeInRight wow">
+              维生素C是蔬果中重要的营养成分之一。本文通过微波辅助方法萃取处理了奇异果，并采用高效液相色谱－二极管阵列检测器测定样品中的维生素C含量。实验以3%的乙腈-0.05 mol/L KH<sub>2</sub>PO<sub>4</sub> 水溶液作为流动相，以维生素C标准系列溶液的色谱峰面积对其浓度做校准曲线，根据样品中维生素C的峰面积，由校准曲线计算其浓度。实验结果表明：奇异果样品维生素C含量为42.7 mg/(100 g)<sup>-1</sup>。高效液相色谱法具有分离效率高，稳定性好，高灵敏度等优点，广泛应用于食品药品中各类维生素的检测。
+            </p>
+            <hr>
+            <h3 class="animate__animated animate__fadeInUp wow">插图</h3>
+            <div class="image-container">
+                <div class="image-item" id="article-pic1">
+                  <img src="../images/article/article_mk_pic1.png" alt="图1" width="300px" class="animate__animated animate__fadeInLeft wow">
+                  <p class="animate__animated animate__fadeInLeft wow">图1: 维生素C的标准曲线</p>
+                </div>
+                <div class="image-item" id="article-pic2">
+                  <img src="../images/article/article_mk_pic2.png" alt="图2" width="300px" class="animate__animated animate__fadeInRight wow">
+                  <p class="animate__animated animate__fadeInRight wow">图2: 奇异果维生素C的HPLC色谱图</p>
+                </div>
+            </div>
+            <hr>
+            <h3 class="animate__animated animate__fadeInUp wow">实验结论</h3>
+            <p class="animate__animated animate__zoomIn wow">
+              实验所得的浓度与峰面积的标准曲线R<sup>2</sup>为0.9996，拟合程度好，对样品中维生素C的测定较准确，说明利用高效液相色谱法测定蔬果中的维生素C的含量，具有试剂用量少、准确性高、操作简单快速等特点.<br><br>
+              奇异果的维生素C含量为42.7 mg/(100 g)<sup>-1</sup>。结果均低于正常值，误差来源主要来源于蔬果保存时间过长或处理方法不当导致维生素C有所变质损失，所以实验测得含量会有所偏低。
+              
+            </p>
+            <hr>
+        </div>
+    </section>
+
+    
+    <!-- Footer部分开始 -->
+    <div class="footer">
+        <div class="container animate__animated animate__fadeIn wow">
+        <div class="footer-box">
+            <h3>关于作者</h3>
+            <p>杨康祺(Fred Yang)<br />中山大学2021级化学学院本科生<br /></p>
+            <p>
+            Copyrights &copy; 2023 All rights reserved By
+            <a href="../aboutME.html"><br />Fred Yang</a>
+            </p>
+        </div>
+        <div class="footer-box">
+            <h3>网站导航</h3>
+            <p>点击指针可查看网站地图</p>
+            <p>
+            <a href="../map.html"><img class="map" src="../images/icons/icon_nav.png" /></a>
+            </p>
+        </div>
+        <div class="footer-box">
+            <h3>联系作者</h3>
+            <p>鼠标停至图标上可获许联系方式</p>
+            <div>
+            <a href="#" class="footer-icon-link icon_wechat">
+                <span class="footer_toolbar toolbar_wechat toolbar_main_move"></span>
+            </a>
+            <a href="#" class="footer-icon-link icon_bilibili">
+                <span class="footer_toolbar toolbar_bilibili toolbar_main_move"></span>
+            </a>
+            <a href="#" class="footer-icon-link icon_email">
+                <span class="footer_toolbar toolbar_email toolbar_main_move"></span>
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Footer部分结束 -->
+
+    <!-- 调用wow -->
+    <script src="../js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

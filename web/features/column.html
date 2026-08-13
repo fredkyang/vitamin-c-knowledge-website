@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- 2023年6月25日 -->
+<!-- ©2023 all rights reserved by Fredyang -->
+<!-- 感谢厚朴工作室师兄师姐提供的教程 -->
+<!-- 感谢瞿俊雄老师的课堂指导 -->
+<html lang="en">
+<head>
+    <!-- 设置文件MIME类型，字符所使用的字符集 -->
+    <meta charset="UTF-8">
+    <!-- IE下打开时，默认使用EDGE模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>All about Vitamin C-生理功能</title>
+    <!-- 用于浏览器网页标签的logo 可以通过修改 href 属性的内容来修改网页标签的logo-->
+    <link rel="icon" href="Web/images/favicon.ico" type="image/x-icon">
+    <!-- 引入CSS样式 -->
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../animate.css">
+    <!-- 视口元标记 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- 导航条部分 -->
+    <nav id="navbar2">
+        <a href="../index.html" class="logo"><img src="../images/logo.png" /></a>
+        <div class="links menu nav-menu" id="nav">
+          <div class="menu-item">
+            <a class="menu-a" data-toggle="sub-menu" href="../index.html">首页</a>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="../features/column.html">生理功能 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="../features/content_whiteskin.html">皮肤美白</a></li>
+              <li class="menu-item"><a href="#">抗氧化</a></li>
+              <li class="menu-item"><a href="#">促进胶原蛋白合成</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="../property/column.html">理化性质 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="../property/content-physics.html">抗坏血酸的物理性质</a></li>
+              <li class="menu-item"><a href="#">抗坏血酸的化学性质</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="../analysis/column.html">实验检测 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="../analysis/content_az.html">青椒中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_ykq.html">红辣椒中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_ljs.html">椰子中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_mk.html">奇异果中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_syx.html">西瓜中的抗坏血酸含量</a></li>
+              <li class="menu-item"><a href="../analysis/content_zqq.html">橙子中的抗坏血酸含量</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="#">水果中的维C <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="#">苹果维C数据报表</a></li>
+              <li class="menu-item"><a href="#">橘子维C数据报表</a></li>
+              <li class="menu-item"><a href="#">葡萄维C数据报表</a></li>
+              <li class="menu-item"><a href="#">柠檬维C数据报表</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="#">蔬菜中的维C <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="#">辣椒维C数据报表</a></li>
+              <li class="menu-item"><a href="#">茄子维C数据报表</a></li>
+              <li class="menu-item"><a href="#">白菜维C数据报表</a></li>
+              <li class="menu-item"><a href="#">番茄维C数据报表</a></li>
+            </ul>
+          </div>
+          <div class="menu-item menu-item-has-children">
+            <a class="menu-a" data-toggle="sub-menu" href="#">有关标准 <i class="plus"></i></a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="#">维生素C药片含量规定</a></li>
+              <li class="menu-item"><a href="#">人体每日摄入含量建议</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
+        <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
+    </nav>
+
+    <!-- 栏目图 -->
+    <header>
+        <img src="../images/features-intro.jpg" width="100%">
+        
+    </header>
+
+    <script src="../js/script.js"></script>
+
+    <!-- 面包屑导航 -->
+    <div class="hope_container" id="hope_container">
+        <i class="location_icon"></i>
+        <img src="../images/icons/mianbaoxie.png" width="20px">
+        <span>您所在的位置：</span>
+        <!--通过改变a标签、span标签的数量和内容来改变网站的位置-->
+        <a href="../index.html">All about Vitamin C</a>
+        <span>&gt;&gt; </span>
+        <a href="../features/column.html">生理功能</a>
+        <hr>
+    </div>
+
+    <!-- 栏目部分开始 -->
+    <section class="card" id="card">
+
+
+        <!-- 标题部分 -->
+        <h1 class="heading animate__animated animate__fadeInUp wow">抗坏血酸的奇妙<span>魔力</span></h1>
+        <p class="heading-description animate__animated animate__fadeInUp wow">
+            维生素C的分子式是C<sub>6</sub>H<sub>8</sub>O<sub>6</sub>，是一种强还原剂，
+            分子中2位及3位碳原子上的两个烯醇式羟基易解离而释放H<sup>+</sup>，<br><br>
+            从而氧化形成脱氢维生素C。维生素C和脱氢维生素C形成了可逆的氧化还原系统，在人体内发挥着重要的作用。
+        </p>
+
+
+        <!-- 栏目内容 -->
+        <div class="container">
+             <div class="card-box animate__animated animate__fadeInLeft wow">
+                <a href="content_whiteskin.html">
+                    <div class="card-img">
+                        <img src="../images/column_whiteskin.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h3>皮肤美白</h3>
+                        <p>维生素C对皮肤的美白作用有两种机理,一是将黑色素产生过程中的深色的氧黑色素还原成还原性黑色素，二是参与体内酪氨酸的代谢，从而减少酪氨酸转化成黑色素。</p>
+                    </div>
+                </a>
+            </div>
+
+            <a href="#">
+                <div class="card-box animate__animated animate__fadeInUp wow">
+                    <div class="card-img">
+                       <img src="../images/column_kangyanghua.jpg" alt="">
+                   </div>
+                   <div class="card-content">
+                       <h3>抗氧化</h3>
+                       <p>自由基是机体反应产生的有害物质，具有很强的氧化性，可损害机体的组织和细胞，从而造成一系列的慢性疾病。<br><br>维生素C是一种水溶性的自由基清除剂，在体内可以清除-OH和O<sup>2-</sup>等自由基，在抗氧化中起到重要的作用。</p>
+                   </div>
+               </div>
+            </a>
+
+            <a href="#">
+                <div class="card-box animate__animated animate__fadeInRight wow">
+                    <div class="card-img">
+                         <img src="../images/column_jiaoyuandanbai.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h3>促进胶原蛋白的合成</h3>
+                        <p>文献表明，每日局部应用含有5% L-抗坏血酸的制剂可以提高Ⅰ型胶原蛋白和Ⅲ型胶原蛋白的mRNA水平，且三种转化酶、羧原胶原蛋白酶和氨基原胶原蛋白酶以及赖氨酸氧化酶的mRNA也有相似程度的增加。</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <p class="heading-description animate__animated animate__rotateInUpLeft wow">
+            PS：【抗氧化】和【促进胶原蛋白合成】两个栏目暂未收录文章，期待后续有同学来积极投稿:)
+        </p>
+    </section>
+    <!-- 栏目部分结束 -->
+    
+    <!-- Footer部分开始 -->
+    <div class="footer">
+        <div class="container animate__animated animate__fadeIn wow">
+        <div class="footer-box">
+            <h3>关于作者</h3>
+            <p>杨康祺(Fred Yang)<br />中山大学2021级化学学院本科生<br /></p>
+            <p>
+            Copyrights &copy; 2023 All rights reserved By
+            <a href="../aboutME.html"><br />Fred Yang</a>
+            </p>
+        </div>
+        <div class="footer-box">
+            <h3>网站导航</h3>
+            <p>点击指针可查看网站地图</p>
+            <p>
+            <a href="../map.html"><img class="map" src="../images/icons/icon_nav.png" /></a>
+            </p>
+        </div>
+        <div class="footer-box">
+            <h3>联系作者</h3>
+            <p>鼠标停至图标上可获许联系方式</p>
+            <div>
+            <a href="#" class="footer-icon-link icon_wechat">
+                <span class="footer_toolbar toolbar_wechat toolbar_main_move"></span>
+            </a>
+            <a href="#" class="footer-icon-link icon_bilibili">
+                <span class="footer_toolbar toolbar_bilibili toolbar_main_move"></span>
+            </a>
+            <a href="#" class="footer-icon-link icon_email">
+                <span class="footer_toolbar toolbar_email toolbar_main_move"></span>
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Footer部分结束 -->
+
+    <!-- 调用wow -->
+    <script src="../js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

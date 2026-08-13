@@ -1,0 +1,913 @@
+/* 2023年6月25日 */
+/*©2023 all rights reserved by Fredyang*/
+/*感谢厚朴工作室师兄师姐提供的教程*/
+/*感谢瞿俊雄老师的课堂指导*/
+
+/* 定义网页的公用部分 */
+:root {
+  --font-heading: #dc143c;
+  --para-font: #777777;
+  --black: #222222;
+  --bg: #ed1c46;
+  --white: #fff;
+}
+
+* {
+  font-family: system-ui; /* 设置页面上所有元素的字体为系统字体 */
+  margin: 0; /* 设置页面上所有元素的外边距为 0 */
+  padding: 0; /* 设置页面上所有元素的内边距为 0 */
+  box-sizing: border-box; /* 设置页面上所有元素的盒模型为border-box，使宽度和高度包括边框和内边距 */
+  outline: none; /* 取消页面上所有元素的默认轮廓样式 */
+  border: none; /* 取消页面上所有元素的边框样式 */
+  text-decoration: none; /* 取消页面上所有元素的文本装饰  */
+  transition: 0.2s linear; /* 设置页面上所有元素的过渡效果为 0.2 秒线性过渡 */
+}
+
+html {
+  font-size: 62.5%; /* 设置页面的根字体大小为 62.5%，等于 10px（便于进行 rem 单位的计算） */
+  overflow-x: hidden; /* 当页面的内容超出水平方向时，隐藏水平滚动条 */
+  scroll-behavior: smooth; /* 平滑滚动行为，使页面滚动效果更流畅 */
+  scroll-padding-top: 9rem; /* 滚动行为时，顶部留出 9rem（144px）的空间，以防止滚动到锚点位置时被导航栏遮挡 */
+}
+
+/* 首页头部布局 */
+.header {
+  width: fit-content; /* 根据内容自动调整宽度，以适应内容的大小 */
+  position: absolute; /* 将头部元素设置为绝对定位，脱离正常的文档流 */
+  top: 0; /* 将头部元素相对于其容器的顶部定位 */
+  z-index: 100; /* 设置头部元素的层级为 100，使其位于其他元素之上 */
+}
+
+/* 主体内容布局 */
+section {
+  padding: 5rem; /* 上下内边距为5rem，左右内边距为容器宽度7% */
+  max-width: 1200px;
+  margin: 0 auto; /* 居中对齐 */
+}
+
+/* 栏目页的大图 */
+/* .column_intro {
+    padding: 0rem 7%
+    display: flex;
+} */
+
+/* 导航条样式 */
+nav {
+  display: flex; /* 将导航栏元素设置为弹性布局 */
+  align-items: center; /* 在交叉轴上居中对齐导航栏的内容 */
+  justify-content: space-between; /* 在主轴上将导航栏的内容均匀分布 */
+  padding: 2rem 7%; /* 设置导航栏的上下内边距为 2rem，左右内边距为容器宽度的 7% */
+  position: fixed; /* 将导航栏元素设置为固定定位，固定在页面的顶部 */
+  top: 0; /* 将导航栏相对于页面的顶部进行定位 */
+  left: 0; /* 将导航栏相对于页面的左侧进行定位 */
+  right: 0; /* 将导航栏相对于页面的右侧进行定位 */
+  z-index: 10000; /* 设置导航栏元素的层级为 10000，使其位于其他元素之上 */
+}
+
+/* 设置非首页的导航条样式 */
+#navbar2 {
+  background-color: black;
+  position: relative;
+  width: 100%;
+  z-index: 9999;
+  /* 非首页的nav用黑底背景 */
+}
+
+/* 设置导航条的链接样式 */
+nav .links a {
+  color: var(--white); /* 设置链接文本颜色为变量(--white)，通常表示为白色 */
+  font-size: 14px; /* 设置链接文本的字体大小为 14px */
+  margin-right: 1.8rem; /* 设置链接元素的右外边距为 1.8rem */
+  text-transform: uppercase; /* 将链接文本转换为大写字母形式 */
+  letter-spacing: 0.1rem; /* 设置字母之间的间距为 0.1rem */
+  position: relative; /* 设置链接元素的定位方式为相对定位 */
+}
+
+/* 创建导航条链接下划线效果 */
+nav .links .menu-a:after {
+  content: ""; /* 设置伪元素的内容为空 */
+  width: 0%; /* 设置伪元素的宽度为 0%，即初始状态下不显示 */
+  height: 3px; /* 设置伪元素的高度为 2px，即下划线的高度 */
+  background: var(--bg); /* 设置伪元素的背景颜色为变量(--bg)的值 */
+  position: absolute; /* 设置伪元素的定位方式为绝对定位 */
+  left: 0; /* 将伪元素相对于父元素的左侧进行定位 */
+  bottom: 5px; /* 将伪元素相对于父元素的底部偏移 5px，即位于链接文本下方 */
+  transition: 0.4s; /* 设置过渡效果的持续时间为 0.4s */
+}
+
+@media screen and (max-width: 768px) {
+  nav .links .menu-a:after {
+    bottom: -5px; /* 将伪元素相对于父元素的底部偏移 -5px，即位于链接文本下方 */
+  }
+}
+
+nav .links a:hover::after {
+  width: 100%;
+}
+
+/* 导航菜单按钮的关闭 */
+nav #menu-btn,
+nav #close {
+  color: var(--white); /* 设置按钮的颜色为变量(--white)，通常表示为白色 */
+  font-size: 2.5rem; /* 设置按钮的字体大小为 2.5rem */
+  cursor: pointer; /* 将鼠标指针设置为手型，表示该按钮可点击 */
+  display: none; /* 设置按钮的显示方式为隐藏 */
+}
+
+.nav-change {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.header {
+  position: relative;
+}
+
+.header .content {
+  position: absolute;
+  top: 150px; /* 设置内容部分与顶部的上边距为 150px */
+  left: 115px; /* 设置内容部分与左侧的左边距为 115px */
+  color: var(--white); /* 设置内容的颜色为一个变量(--white)，通常表示为白色 */
+  width: fit-content; /* 设置内容的宽度为适应内容的宽度 */
+}
+
+/* 当屏幕宽度小于或等于 700px 时，应用特定的样式来适应移动设备的视图。 */
+@media screen and (max-width: 768px) {
+  .header {
+    width: 100%; /* 当屏幕宽度小于或等于 700px 时，将标题栏的宽度设置为 100% */
+  }
+  .header .content {
+    margin-left: 0; /* 将内容部分的左边距设置为 0 */
+    width: 100%; /* 将内容部分的宽度设置为 100% */
+    display: flex; /* 使用 Flex 布局 */
+    align-items: center; /* 在主轴上居中对齐 */
+    justify-content: center; /* 在交叉轴上居中对齐 */
+    flex-direction: column; /* 设置主轴为垂直方向，使内容垂直排列 */
+    top: 150px;
+    left: calc(25% - 190px);
+    width: fit-content;
+  }
+  .header .content h1{
+    width: 380px !important;
+  }
+}
+
+/* 当屏幕宽度大于或等于 1000px 时，应用特定的样式来适应移动设备的视图。 */
+@media screen and (min-width: 1300px) {
+  .header .content {
+    top: 300px;
+    left: 115px; /* 将内容部分的左边距设置为 0 */
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .header .content {
+    top: 500px;
+    left: 115px; /* 将内容部分的左边距设置为 0 */
+  }
+}
+
+/*面包屑导航样式*/
+#hope_container {
+  /*设置行高*/
+  /*location字体颜色*/
+  color: var(--black);
+  font-size: 14px;
+  padding: 1rem 15%; /* 上下内边距为1rem，左右内边距为容器宽度7% */
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#hope_container hr {
+  height: 1px;
+  background: rgba(236, 226, 229, 0.5);
+  margin-top: 10px;
+}
+
+.header .content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 3rem 0;
+  width: 580px;
+}
+
+.header .content h1 {
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+.heading {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.heading span {
+  color: var(--font-heading);
+}
+
+.heading-description {
+  text-align: center;
+  padding: 1.3rem 0;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+/* 定义按钮样式 */
+.btn {
+  padding: 1.3rem 5rem;
+  margin: 3rem 0;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 500;
+  border: 0.3rem solid var(--font-heading);
+  border-radius: 7px;
+  background: none;
+  transition: all linear 0.5s;
+}
+
+.btn:hover {
+  background: var(--bg);
+  color: var(--white);
+  transform: translate(0px, -3px);
+}
+
+
+.intro .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro .container .image {
+  flex-basis: 50%;
+  background: url(./images/vc.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 16rem 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px 0px rgb(195, 193, 193);
+}
+
+.intro .container .intro-content {
+  flex-basis: 40%;
+}
+
+.intro .container .intro-content h1 {
+  font-size: 4rem;
+  color: var(--font-heading);
+  padding: 1rem 0;
+}
+
+.intro .container .intro-content h3 {
+  color: var(--black);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 1rem 0;
+}
+
+.intro .container .intro-content p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+
+/* 栏目页样式 */
+.card .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+  padding: 2.5rem 0;
+  grid-row-gap: 4rem;
+}
+
+.card .container .card-box {
+  background: var(--white);
+  height: auto;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(179, 179, 179, 0.2);
+  padding-bottom: 3rem;
+  border-radius: 10px;
+}
+
+.card .container .card-box img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card .container .card-box .card-content {
+  padding: 1.5rem;
+}
+
+.card .container .card-box .card-content h3 {
+  font-size: 2.5rem;
+  padding: 1.3rem 0;
+}
+
+.card .container .card-box .card-content p {
+  font-size: 1.6rem;
+  padding: 1.3rem 0;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.card .container .card-box:hover {
+  transform: translateY(-1rem);
+}
+
+/* 内容页文章样式 */
+
+#airticle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8vw;
+}
+
+#article h2 {
+  color: #29303b;
+  font-size: 3rem;
+  padding: 0;
+}
+
+#article h3 {
+  padding: 35px 0 25px 0;
+  color: #29303b;
+  font-size: 2.2rem;
+}
+
+#article p {
+  color: #64626e;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+#article hr {
+  height: 1px;
+  background: rgba(236, 226, 229, 0.5);
+  margin-top: 40px;
+}
+
+#article .author {
+  display: flex;
+}
+
+#article .author img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#article .author h5 {
+  font-size: 2rem;
+}
+
+#article .author p {
+  font-size: 1.5rem;
+}
+
+.article .content .image-container {
+  display: flex;
+}
+
+.article .content .image-container .image-item {
+  margin-right: 10px;
+}
+
+.article .content .image-container .image-item p {
+  text-align: center;
+}
+
+#article-pic2 {
+  margin-left: 20px;
+}
+
+
+/* footer样式设置 */
+.footer {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  padding: 8rem; /* 上下内边距为8rem */
+  max-width: 1200px;
+  margin: 0 auto; /* 居中对齐 */
+}
+
+.footer .container .footer-box {
+  padding: 1rem;
+}
+
+.footer .container .footer-box h3 {
+  color: var(--white);
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.footer .container .footer-box p {
+  color: var(--white);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  padding: 1.2rem 0;
+}
+
+.footer .container .footer-box p a {
+  color: var(--bg);
+}
+
+.footer .container .footer-box form button {
+  background: var(--bg);
+  color: var(--white);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.footer .container .footer-box div {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer .container .footer-box div a {
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.footer .container .footer-box div a img {
+  size-adjust: 10px;
+}
+
+/* footer部分icon的鼠标悬停动画 */
+.footer .container .footer-box .map {
+  transition: transform 1s;
+}
+
+.footer .container .footer-box .map:hover {
+  transform: rotate(360deg);
+}
+
+.footer .container .footer-box .contact {
+  transition: transform 0.5s;
+}
+
+.footer .container .footer-box .contact:hover {
+  transform: translateY(-5px);
+}
+
+.footer_toolbar {
+  /*设置宽度*/
+  width: 160px;
+  z-index: 9999;
+}
+
+
+/* 网页地图样式设置 */
+map {
+  padding: 8rem 0%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+map h3 {
+  color: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+map li {
+  list-style: none;
+  color: var(--para-font);
+  padding: 10px 0;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+map li:hover {
+  color: var(--bg);
+}
+
+
+/* 响应式样式设置 */
+@media only screen and (min-width: 1950px) {
+  #hope_container {
+    padding: 1rem 34%; /* 上下内边距为1rem，左右内边距为容器宽度34% */
+  }
+
+  .footer .container {
+    position: center;
+    padding: 1rem 3%; /* 上下内边距为8rem，左右内边距为容器宽度3% */
+  }
+}
+
+@media only screen and (max-width: 2000px) {
+  #hope_container {
+    padding: 1rem 25%; /* 上下内边距为1rem，左右内边距为容器宽度25% */
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  #hope_container {
+    padding: 1rem 15%; /* 上下内边距为1rem，左右内边距为容器宽度15% */
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  nav {
+    padding: 3rem 3rem;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .article .content .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article .content .image-container .image-item {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  #second-image {
+    margin-left: 0;
+  }
+
+  #hope_container {
+    padding: 1rem 8%; /* 上下内边距为1rem，左右内边距为容器宽度8% */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav #menu-btn {
+    display: inline-block;
+  }
+
+  nav .links {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #eee;
+    transition: 0.5s;
+    background: black;
+  }
+
+  nav .links a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .intro .container {
+    flex-direction: column;
+  }
+
+  .intro .container .intro-content {
+    text-align: center;
+  }
+
+  .logo img {
+    width: 80%;
+  }
+}
+
+/* 禁用锚点访问后的颜色变化 */
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.icon_wechat {
+  width: 32px !important;
+  height: 32px !important;
+  /*icon图片地址*/
+  background-image: url("./images/icons/icon_wechat.png");
+  background-repeat: no-repeat;
+  transform: translateY(0);
+  transition: transform 0.5s;
+}
+.icon_wechat:hover,
+.icon_bilibili:hover,
+.icon_email:hover {
+  transform: translateY(-5px);
+}
+.icon_bilibili {
+  width: 32px !important;
+  height: 32px !important;
+  /*icon图片地址*/
+  background-image: url("./images/icons/icon_bilibili.png");
+  background-repeat: no-repeat;
+  transform: translateY(0);
+}
+.icon_email {
+  width: 32px !important;
+  height: 32px !important;
+  /*icon图片地址*/
+  background-image: url("./images/icons/icon_mail.png");
+  background-repeat: no-repeat;
+  transform: translateY(0);
+}
+.icon_wechat:hover .toolbar_wechat,
+.icon_bilibili:hover .toolbar_bilibili,
+.icon_email:hover .toolbar_email {
+  /*透明度*/
+  opacity: 1;
+  filter: alpha(opacity=100);
+  /*缩放*/
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.toolbar_main_move {
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /*设置缩放的原点*/
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  /*缩放*/
+  -webkit-transform: scale(0.01);
+  -moz-transform: scale(0.01);
+  -ms-transform: scale(0.01);
+  -o-transform: scale(0.01);
+  transform: scale(0.01);
+  /*过渡*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.toolbar_wechat {
+  /*高度，可根据选择的图片来改变*/
+  width: 160px;
+  height: 160px;
+  /*绝对定位 按照父元素水平居中*/
+  left: -65px;
+  bottom: 45px;
+  /*鼠标悬浮时wechat图标出现的图片*/
+  background-image: url("./images/wechat_QRcode.jpg");
+  background-size: 100%;
+}
+.toolbar_bilibili {
+  width: 200px;
+  /*高度，可根据选择的图片来改变*/
+  height: 250px;
+  /*绝对定位 按照父元素水平居中*/
+  left: -65px;
+  bottom: 45px;
+  /*鼠标悬浮时phone图标出现的图片*/
+  background-image: url("./images/bilibili_QRcode.png");
+  background-size: 100%;
+}
+.toolbar_email {
+  width: 220px;
+  /*高度，可根据选择的图片来改变*/
+  height: 45px;
+  /*绝对定位 按照父元素水平居中*/
+  left: -65px;
+  bottom: 45px;
+  /*鼠标悬浮时phone图标出现的图片*/
+  background-image: url("./images/email_text.png");
+  background-size: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu > .menu-item {
+  margin-left: 30px;
+  position: relative;
+  width: fit-content;
+}
+.menu > .menu-item > a {
+  display: block;
+  padding: 12px 0;
+  letter-spacing: 0;
+  margin-right: 0;
+  transition: all 0.3s ease;
+}
+.menu > .menu-item > a .plus {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  position: relative;
+  margin-left: 5px;
+  pointer-events: none;
+}
+.menu > .menu-item > a .plus:before,
+.menu > .menu-item > a .plus:after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+.menu > .menu-item:hover > a .plus:before,
+.menu > .menu-item:hover > a .plus:after {
+  background-color: #e91e63;
+}
+.menu > .menu-item > a .plus:after {
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.menu > .menu-item > .sub-menu > .menu-item > a:hover,
+.menu > .menu-item:hover > a {
+  color: #e91e63;
+}
+.menu > .menu-item > .sub-menu {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 230px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: black;
+  padding: 10px 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu > .menu-item-has-children:hover > .sub-menu{
+	transform: translateY(0);
+	opacity: 1;
+	visibility: visible;
+ }
+.menu > .menu-item-has-children:hover > a .plus:after{
+    transform: translate(-50%,-50%) rotate(0deg);		
+ }
+
+.menu > .menu-item > .sub-menu > .menu-item {
+  display: block;
+}
+.menu > .menu-item > .sub-menu > .menu-item > a {
+  display: block;
+  padding: 16px 20px;
+  padding-right: 0;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  text-align: left;
+}
+.open-nav-menu {
+  height: 34px;
+  width: 40px;
+  margin-right: 15px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.open-nav-menu span {
+  display: block;
+  height: 3px;
+  width: 24px;
+  background-color: #000000;
+  position: relative;
+}
+.open-nav-menu span:before,
+.open-nav-menu span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  box-sizing: border-box;
+}
+.open-nav-menu span:before {
+  top: -7px;
+}
+.open-nav-menu span:after {
+  top: 7px;
+}
+.close-nav-menu {
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  margin: 0 0 15px 15px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.close-nav-menu img {
+  width: 16px;
+}
+.menu-overlay {
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+  .menu > .menu-item {
+    width: 100%;
+  }
+  .menu > .menu-item > a {
+    text-align: left;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .menu > .menu-item{
+		display: block;
+		margin:0;
+	}
+	.menu > .menu-item-has-children > a{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.menu > .menu-item > a{
+		color: #ffffff;
+		padding: 12px 15px;
+	}
+	.menu > .menu-item > a .plus:before, 
+	.menu > .menu-item > a .plus:after{
+		background-color: #ffffff;
+	}
+	.menu > .menu-item-has-children.active > a .plus:after{
+        transform: translate(-50%,-50%) rotate(0deg);
+	}
+	.menu > .menu-item > .sub-menu{
+		width: 100%;
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		border:none;
+		background-color: transparent;
+		box-shadow: none;
+		transform: translateY(0px);
+		padding: 0px;
+		left: auto;
+		top:auto;
+		max-height: 0;
+		overflow: hidden;
+	}
+	.menu > .menu-item > .sub-menu > .menu-item > a{
+		padding: 12px 45px;
+		color: #ffffff;
+	}
+}
